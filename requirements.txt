@@ -1,0 +1,10 @@
+python-dotenv
+pyyaml
+httpx
+beautifulsoup4
+lxml
+sentence-transformers
+chromadb
+groq
+streamlit
+numpy

@@ -1,0 +1,62 @@
+{
+  "created_at": "2026-11-01T08:34:59Z",
+  "strategy": "section_aware",
+  "size": 800,
+  "overlap": 120,
+  "total_pages": 5,
+  "total_chunks": 134,
+  "by_section": {
+    "benchmark": 1,
+    "exit_load": 12,
+    "expense_ratio": 9,
+    "min_sip": 5,
+    "overview": 107
+  },
+  "pages": {
+    "hdfc-elss-tax-saver-fund-direct-plan-growth": {
+      "total": 25,
+      "by_section": {
+        "benchmark": 1,
+        "exit_load": 1,
+        "expense_ratio": 2,
+        "min_sip": 2,
+        "overview": 19
+      }
+    },
+    "hdfc-equity-fund-direct-growth": {
+      "total": 26,
+      "by_section": {
+        "exit_load": 2,
+        "expense_ratio": 2,
+        "min_sip": 1,
+        "overview": 21
+      }
+    },
+    "hdfc-large-cap-fund-direct-growth": {
+      "total": 25,
+      "by_section": {
+        "exit_load": 3,
+        "expense_ratio": 2,
+        "min_sip": 1,
+        "overview": 19
+      }
+    },
+    "hdfc-mid-cap-fund-direct-growth": {
+      "total": 26,
+      "by_section": {
+        "exit_load": 2,
+        "expense_ratio": 2,
+        "min_sip": 1,
+        "overview": 21
+      }
+    },
+    "hdfc-mutual-funds": {
+      "total": 32,
+      "by_section": {
+        "exit_load": 4,
+        "expense_ratio": 1,
+        "overview": 27
+      }
+    }
+  }
+}

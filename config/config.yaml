@@ -1,0 +1,44 @@
+embedding:
+  model: sentence-transformers/all-MiniLM-L6-v2
+chunk:
+  strategy: section_aware
+  size: 800
+  overlap: 120
+chroma:
+  persist_dir: data/chroma
+  collection: groww_mf_faq
+  distance: cosine
+retrieval:
+  top_k: 4
+  min_score: 0.25
+llm:
+  provider: groq
+sources:
+  allowlist:
+    - url: https://groww.in/mutual-funds/amc/hdfc-mutual-funds
+      page_id: hdfc-mutual-funds
+      scheme_or_amc: HDFC Mutual Fund
+    - url: https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth
+      page_id: hdfc-large-cap-fund-direct-growth
+      scheme_or_amc: HDFC Large Cap Fund Direct Growth
+    - url: https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth
+      page_id: hdfc-equity-fund-direct-growth
+      scheme_or_amc: HDFC Flexi Cap Direct Plan Growth
+    - url: https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth
+      page_id: hdfc-elss-tax-saver-fund-direct-plan-growth
+      scheme_or_amc: HDFC ELSS Tax Saver Fund Direct Plan Growth
+    - url: https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth
+      page_id: hdfc-mid-cap-fund-direct-growth
+      scheme_or_amc: HDFC Mid Cap Fund Direct Growth
+ui:
+  welcome: Ask factual questions about HDFC Mutual Fund schemes. Every answer includes a source link.
+  disclaimer: Facts-only. No investment advice.
+  examples:
+    - What is the expense ratio of HDFC Large Cap Fund Direct Growth?
+    - What is the lock-in for HDFC ELSS Tax Saver?
+    - Who is the fund manager of HDFC Mid Cap Fund?
+safety:
+  # All links shown by the app come from the 5 approved corpus pages (the
+  # previous AMFI education link 404s; keeping every displayed URL live).
+  educational_link: https://groww.in/mutual-funds/amc/hdfc-mutual-funds
+  factsheet_fallback_url: https://groww.in/mutual-funds/amc/hdfc-mutual-funds

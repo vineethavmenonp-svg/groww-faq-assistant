@@ -1,0 +1,12 @@
+.venv/
+.env
+__pycache__/
+*.pyc
+.DS_Store
+data/chroma/**
+!data/chroma/.gitkeep
+artifacts/retrieve/**
+!artifacts/retrieve/.gitkeep
+artifacts/generate/**
+!artifacts/generate/.gitkeep
+
