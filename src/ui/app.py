@@ -14,9 +14,21 @@ Run: streamlit run src/ui/app.py
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 import streamlit as st
+
+# Self-locate the repository root and add it to sys.path so the app's
+# absolute `src.*` imports resolve on any runner. Streamlit executes this
+# file with `src/ui` (not the repo root) on sys.path — the standard Python
+# `sys.path[0]`-is-script-dir behavior — which causes
+# ModuleNotFoundError: No module named 'src' on hosted runners. Inserting
+# the root here makes the entry point independent of the working
+# directory and runner environment.
+_REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(_REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(_REPO_ROOT))
 
 from src.config_loader import get_config
 from src.models import Answer
