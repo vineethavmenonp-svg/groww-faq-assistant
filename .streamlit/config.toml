@@ -1,0 +1,9 @@
+# UX polish: Groww-inspired community palette (not official brand specs):
+# accent mint on a light canvas, main text #202B33.
+[theme]
+base = "light"
+primaryColor = "#00B386"
+backgroundColor = "#F7FAF9"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#202B33"
+font = "sans serif"

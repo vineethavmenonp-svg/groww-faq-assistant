@@ -23,6 +23,9 @@ AnswerMode = Literal[
     "refuse_advice",
     "refuse_pii",
     "refuse_performance",
+    "refuse_scope",
+    "plan_limitation",
+    "clarify",
     "unknown",
 ]
 
@@ -66,4 +69,15 @@ class Answer:
     request_id: str
     source_url: str | None = None
     last_updated: str | None = None
+    # NAV-date of the saved value itself, when the answer quotes one (freshness
+    # template). Kept distinct from `last_updated` (the page-collection date).
+    nav_date: str | None = None
+    # True when the model said the fact is NOT in the excerpts it saw — this is
+    # retrieval sparsity, not proof of absence, so the pipeline may retry once
+    # with a lexical second-chance retrieval on the same restricted page.
+    needs_lexical_retry: bool = False
+    # The context-resolved question this turn was actually answered against —
+    # the raw user text plus any carried fact phrasing (clarify-reply or
+    # follow-up). The UI carries this forward as the next turn's context.
+    effective_question: str | None = None
     trace_paths: dict[str, str] = field(default_factory=dict)
